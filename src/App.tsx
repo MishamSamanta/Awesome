@@ -12,6 +12,7 @@ import ProjectCard from './components/ProjectCard';
 import SectionQuote from './components/SectionQuote';
 import ProjectLightbox from './components/ProjectLightbox';
 import Beams from './components/Beams';
+import RotatingText from './components/RotatingText';
 import {
   Mail,
   Instagram,
@@ -92,7 +93,7 @@ export default function App() {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-2 font-display text-sm font-bold tracking-[0.25em] text-white hover:text-accent transition-colors cursor-pointer"
           >
-            <span>AIDEN VANCE ARCHIVE</span>
+            <span>MISHAM SAMANTA ARCHIVE</span>
             <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
           </button>
 
@@ -112,7 +113,7 @@ export default function App() {
       <main className="flex-grow">
         
         {/* A. HERO VIEW (CENTRALIZED, DRAMATIC, HIGH-CONTRAST) */}
-        <section className="relative h-[96vh] flex flex-col justify-center items-center px-6 overflow-hidden border-b border-zinc-900/30">
+        <section className="relative h-screen flex flex-col justify-center items-center px-6 overflow-hidden border-b border-zinc-900/30">
           
           {/* Subtle geometric glowing background grids */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/[0.03] rounded-full filter blur-[120px] pointer-events-none" />
@@ -152,7 +153,7 @@ export default function App() {
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               className="space-y-1"
             >
-              <span className="block font-rubik text-4xl md:text-5xl lg:text-6xl font-light tracking-[0.22em] text-zinc-400 uppercase italic">
+              <span className="block font-shadows font-bold text-5xl md:text-7xl lg:text-8xl text-white tracking-wide">
                 Make
               </span>
               
@@ -164,15 +165,30 @@ export default function App() {
               </h1>
             </motion.div>
 
-            {/* Concise subtitle statement */}
-            <motion.p
+            {/* Concise subtitle statement with RotatingText effect */}
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 1.2 }}
-              className="text-zinc-500 text-[11px] font-mono tracking-[0.18em] uppercase max-w-xl mt-8 leading-relaxed"
+              className="max-w-xl mt-8 leading-relaxed flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1.5"
             >
-              Aiden Vance — Graphic Designer & Video Editor based in NYC.
-            </motion.p>
+              <span className="font-bebas text-xl sm:text-2xl tracking-wider text-zinc-400">Misham Samanta —</span>
+              <RotatingText
+                texts={['Graphic Designer', 'Video Editor']}
+                mainClassName="px-3 bg-accent text-black overflow-hidden py-0.5 justify-center rounded-xs font-bebas text-xl sm:text-2xl tracking-wider"
+                staggerFrom="last"
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "-120%" }}
+                staggerDuration={0.025}
+                splitLevelClassName="overflow-hidden pb-0.5"
+                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                rotationInterval={2500}
+                splitBy="characters"
+                auto
+                loop
+              />
+            </motion.div>
 
             {/* Quick interactive call to actions */}
             <motion.div
@@ -374,7 +390,7 @@ export default function App() {
               </h2>
               <div className="space-y-4 text-zinc-400 text-sm leading-relaxed font-sans">
                 <p>
-                  My name is Aiden Vance. Over the last eight years, I have navigated the intersection where static graphic layout collides with rhythmic cinematic timelines. For me, design is not an ornamentation—it is a functional blueprint. A video is not a container for footage—it is an exploration of pace, sequence, and sonic texture.
+                  My name is Misham Samanta. Over the last eight years, I have navigated the intersection where static graphic layout collides with rhythmic cinematic timelines. For me, design is not an ornamentation—it is a functional blueprint. A video is not a container for footage—it is an exploration of pace, sequence, and sonic texture.
                 </p>
                 <p>
                   Whether designing a brutalist limited-edition print poster or editing a vertical video campaign that reaches millions, my execution remains unified: extreme structural integrity, high-contrast aesthetics, and meticulous attention to user engagement.
@@ -543,7 +559,7 @@ export default function App() {
                   <div className="space-y-2">
                     <h4 className="font-display text-xl font-bold text-white tracking-tight">Transmission Received</h4>
                     <p className="text-zinc-400 text-sm max-w-sm mx-auto leading-relaxed font-sans">
-                      Thank you. Your project brief has landed in the inbox. Aiden will review and establish communication within 24 hours.
+                      Thank you. Your project brief has landed in the inbox. Misham will review and establish communication within 24 hours.
                     </p>
                   </div>
                   <button
@@ -653,7 +669,7 @@ export default function App() {
       <footer className="bg-[#060608] border-t border-zinc-900/40 py-16 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-zinc-500 font-mono text-[10px] tracking-widest">
           <div>
-            © {new Date().getFullYear()} AIDEN VANCE ARCHIVE. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} MISHAM SAMANTA ARCHIVE. ALL RIGHTS RESERVED.
           </div>
 
           <div className="flex gap-6">
@@ -668,8 +684,8 @@ export default function App() {
             </a>
           </div>
 
-          <a href="mailto:aiden@vancearchive.com" className="hover:text-accent text-[#f4f4f6]/70 transition-colors uppercase">
-            aiden@vancearchive.com
+          <a href="mailto:misham.samanta@gmail.com" className="hover:text-accent text-[#f4f4f6]/70 transition-colors uppercase">
+            misham.samanta@gmail.com
           </a>
         </div>
       </footer>
