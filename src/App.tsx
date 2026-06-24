@@ -101,7 +101,7 @@ export default function App() {
           <nav className="flex items-center gap-6">
             <button
               onClick={() => scrollToId('projects')}
-              className="text-[10px] font-mono tracking-[0.2em] text-zinc-400 hover:text-accent transition-colors cursor-pointer border border-zinc-800/80 hover:border-accent/40 rounded-xs px-4 py-2 bg-zinc-950/40"
+              className="text-[10px] font-orbitron tracking-[0.15em] text-zinc-400 hover:text-accent transition-colors cursor-pointer border border-zinc-800/80 hover:border-accent/40 rounded-xs px-4 py-2 bg-zinc-950/40"
             >
               PROJECTS
             </button>
@@ -199,13 +199,13 @@ export default function App() {
             >
               <button
                 onClick={() => scrollToId('projects')}
-                className="px-5 py-3 bg-accent text-[#0a0a0c] font-mono text-[10px] tracking-widest uppercase font-semibold hover:bg-white transition-all duration-300 rounded-xs cursor-pointer"
+                className="px-5 py-3 bg-accent text-[#0a0a0c] font-orbitron text-[9px] tracking-[0.15em] uppercase font-bold hover:bg-white transition-all duration-300 rounded-xs cursor-pointer"
               >
                 ENTER ARCHIVE
               </button>
               <button
                 onClick={() => scrollToId('contact')}
-                className="px-5 py-3 border border-zinc-800 hover:border-accent hover:text-accent font-mono text-[10px] tracking-widest uppercase transition-all duration-300 rounded-xs cursor-pointer bg-zinc-950/20"
+                className="px-5 py-3 border border-zinc-800 hover:border-accent hover:text-accent font-orbitron text-[9px] tracking-[0.15em] uppercase transition-all duration-300 rounded-xs cursor-pointer bg-zinc-950/20"
               >
                 GET IN TOUCH
               </button>
@@ -564,7 +564,7 @@ export default function App() {
                   </div>
                   <button
                     onClick={() => setFormSubmitted(false)}
-                    className="px-5 py-2.5 bg-zinc-900 hover:bg-zinc-800 text-zinc-300 font-mono text-[10px] tracking-widest uppercase transition-colors rounded-xs cursor-pointer"
+                    className="px-5 py-2.5 bg-zinc-900 hover:bg-zinc-800 text-zinc-300 font-orbitron text-[9px] tracking-[0.15em] uppercase transition-colors rounded-xs cursor-pointer"
                   >
                     SUBMIT ANOTHER BRIEF
                   </button>
@@ -643,7 +643,7 @@ export default function App() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 bg-accent hover:bg-white text-[#0a0a0c] font-mono text-xs font-semibold tracking-widest uppercase transition-colors duration-300 flex items-center justify-center gap-2 rounded-xs cursor-pointer disabled:opacity-50"
+                    className="w-full py-4 bg-accent hover:bg-white text-[#0a0a0c] font-orbitron text-[11px] font-bold tracking-[0.15em] uppercase transition-colors duration-300 flex items-center justify-center gap-2 rounded-xs cursor-pointer disabled:opacity-50"
                   >
                     {isSubmitting ? (
                       <span>INITIATING TRANSMISSION...</span>
