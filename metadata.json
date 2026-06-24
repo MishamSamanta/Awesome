@@ -1,0 +1,6 @@
+{
+  "name": "Aiden Vance Portfolio",
+  "description": "Minimal creative archive and portfolio website for Aiden Vance, Graphic Designer and Video Editor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
