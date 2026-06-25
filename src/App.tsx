@@ -10,6 +10,7 @@ import { Project } from './types';
 import ProjectCard from './components/ProjectCard';
 import SectionQuote from './components/SectionQuote';
 import ProjectLightbox from './components/ProjectLightbox';
+import StarBorder from './components/StarBorder';
 import HorizontalScrollContainer from './components/HorizontalScrollContainer';
 import Beams from './components/Beams';
 import RotatingText from './components/RotatingText';
@@ -100,12 +101,17 @@ export default function App() {
 
           {/* Solid-white Pill Button on the Right */}
           <nav className="flex items-center">
-            <button
+            <StarBorder
+              as="button"
               onClick={() => scrollToId('projects')}
-              className="text-[11px] font-orbitron font-bold tracking-[0.12em] text-[#0a0a0c] bg-white hover:bg-accent hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 cursor-pointer rounded-full px-5 py-2.5 shadow-sm"
+              color="#d2ff00"
+              speed="4s"
+              borderRadius="9999px"
+              className="hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 cursor-pointer"
+              innerClassName="text-[11px] font-orbitron font-bold tracking-[0.12em] text-white hover:text-accent bg-zinc-950/80 px-5 py-2.5 border-none"
             >
               PROJECTS
-            </button>
+            </StarBorder>
           </nav>
         </div>
       </header>
@@ -198,18 +204,28 @@ export default function App() {
               transition={{ delay: 0.8, duration: 1 }}
               className="flex items-center gap-4 mt-8"
             >
-              <button
+              <StarBorder
+                as="button"
                 onClick={() => scrollToId('projects')}
-                className="px-5 py-3 bg-accent text-[#0a0a0c] font-orbitron text-[9px] tracking-[0.15em] uppercase font-bold hover:bg-white transition-all duration-300 rounded-xs cursor-pointer"
+                color="#d2ff00"
+                speed="3.5s"
+                borderRadius="4px"
+                className="hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 cursor-pointer"
+                innerClassName="px-5 py-3 bg-zinc-950 text-white hover:text-accent font-orbitron text-[9px] tracking-[0.15em] uppercase font-bold border-none"
               >
                 ENTER ARCHIVE
-              </button>
-              <button
+              </StarBorder>
+              <StarBorder
+                as="button"
                 onClick={() => scrollToId('contact')}
-                className="px-5 py-3 border border-zinc-800 hover:border-accent hover:text-accent font-orbitron text-[9px] tracking-[0.15em] uppercase transition-all duration-300 rounded-xs cursor-pointer bg-zinc-950/20"
+                color="#a1a1aa"
+                speed="5s"
+                borderRadius="4px"
+                className="hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 cursor-pointer"
+                innerClassName="px-5 py-3 bg-zinc-950/40 text-zinc-400 hover:text-white font-orbitron text-[9px] tracking-[0.15em] uppercase border-none"
               >
                 GET IN TOUCH
-              </button>
+              </StarBorder>
             </motion.div>
           </div>
 
@@ -517,31 +533,49 @@ export default function App() {
 
               <div className="border-t border-zinc-900/60 pt-6 space-y-4">
                 <p className="font-mono text-[9px] text-zinc-500 tracking-widest uppercase">ONLINE PLATFORMS</p>
-                <div className="flex flex-wrap gap-6 text-zinc-400">
-                  <a
+                <div className="flex flex-wrap gap-4 text-zinc-400">
+                  <StarBorder
+                    as="a"
                     href="https://instagram.com/placeholder"
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:text-accent transition-colors flex items-center gap-1.5 text-xs font-mono"
+                    color="#10b981"
+                    speed="4s"
+                    borderRadius="12px"
+                    className="hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+                    innerClassName="flex items-center gap-3 text-xs font-mono bg-gradient-to-r from-emerald-500/10 to-[#d2ff00]/10 hover:from-emerald-500/20 hover:to-[#d2ff00]/20 px-5 py-3 border-none text-zinc-300 hover:text-accent group"
                   >
-                    <Instagram className="w-4 h-4" /> INSTAGRAM
-                  </a>
-                  <a
+                    <Instagram className="w-6 h-6 text-zinc-300 group-hover:text-accent transition-colors duration-300" />
+                    <span className="tracking-widest">INSTAGRAM</span>
+                  </StarBorder>
+                  <StarBorder
+                    as="a"
                     href="https://youtube.com/placeholder"
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:text-accent transition-colors flex items-center gap-1.5 text-xs font-mono"
+                    color="#10b981"
+                    speed="4s"
+                    borderRadius="12px"
+                    className="hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+                    innerClassName="flex items-center gap-3 text-xs font-mono bg-gradient-to-r from-emerald-500/10 to-[#d2ff00]/10 hover:from-emerald-500/20 hover:to-[#d2ff00]/20 px-5 py-3 border-none text-zinc-300 hover:text-accent group"
                   >
-                    <Youtube className="w-4 h-4" /> YOUTUBE
-                  </a>
-                  <a
+                    <Youtube className="w-6 h-6 text-zinc-300 group-hover:text-accent transition-colors duration-300" />
+                    <span className="tracking-widest">YOUTUBE</span>
+                  </StarBorder>
+                  <StarBorder
+                    as="a"
                     href="https://linkedin.com/placeholder"
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:text-accent transition-colors flex items-center gap-1.5 text-xs font-mono"
+                    color="#10b981"
+                    speed="4s"
+                    borderRadius="12px"
+                    className="hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+                    innerClassName="flex items-center gap-3 text-xs font-mono bg-gradient-to-r from-emerald-500/10 to-[#d2ff00]/10 hover:from-emerald-500/20 hover:to-[#d2ff00]/20 px-5 py-3 border-none text-zinc-300 hover:text-accent group"
                   >
-                    <Linkedin className="w-4 h-4" /> LINKEDIN
-                  </a>
+                    <Linkedin className="w-6 h-6 text-zinc-300 group-hover:text-accent transition-colors duration-300" />
+                    <span className="tracking-widest">LINKEDIN</span>
+                  </StarBorder>
                 </div>
               </div>
             </div>
@@ -569,12 +603,17 @@ export default function App() {
                       Thank you. Your project brief has landed in the inbox. Misham will review and establish communication within 24 hours.
                     </p>
                   </div>
-                  <button
+                  <StarBorder
+                    as="button"
                     onClick={() => setFormSubmitted(false)}
-                    className="px-5 py-2.5 bg-zinc-900 hover:bg-zinc-800 text-zinc-300 font-orbitron text-[9px] tracking-[0.15em] uppercase transition-colors rounded-xs cursor-pointer"
+                    color="#a1a1aa"
+                    speed="5s"
+                    borderRadius="4px"
+                    className="hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 cursor-pointer"
+                    innerClassName="px-5 py-2.5 bg-zinc-900 text-zinc-300 hover:text-white font-orbitron text-[9px] tracking-[0.15em] uppercase border-none"
                   >
                     SUBMIT ANOTHER BRIEF
-                  </button>
+                  </StarBorder>
                 </motion.div>
               ) : (
                 <motion.form
@@ -647,10 +686,15 @@ export default function App() {
                     />
                   </div>
 
-                  <button
+                  <StarBorder
+                    as="button"
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 bg-accent hover:bg-white text-[#0a0a0c] font-orbitron text-[11px] font-bold tracking-[0.15em] uppercase transition-colors duration-300 flex items-center justify-center gap-2 rounded-xs cursor-pointer disabled:opacity-50"
+                    color="#d2ff00"
+                    speed="3s"
+                    borderRadius="4px"
+                    className="w-full hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 cursor-pointer disabled:opacity-50"
+                    innerClassName="w-full py-4 bg-zinc-950 text-white hover:text-accent font-orbitron text-[11px] font-bold tracking-[0.15em] uppercase border-none flex items-center justify-center gap-2"
                   >
                     {isSubmitting ? (
                       <span>INITIATING TRANSMISSION...</span>
@@ -660,7 +704,7 @@ export default function App() {
                         <Send className="w-4.5 h-4.5" />
                       </>
                     )}
-                  </button>
+                  </StarBorder>
                 </motion.form>
               )}
             </AnimatePresence>
