@@ -84,24 +84,24 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#0a0a0c] text-[#f4f4f6] selection:bg-accent selection:text-[#0a0a0c] flex flex-col font-sans antialiased">
       
-      {/* 1. TOP STICKY NAVIGATION (ULTRALIGHT, CLUTTER-FREE) */}
-      <header className="fixed top-0 left-0 right-0 z-40 bg-[#0a0a0c]/40 backdrop-blur-md border-b border-zinc-900/10">
-        <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+      {/* 1. TOP STICKY NAVIGATION (MODERN FLOATING GLASS PILL) */}
+      <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-4xl bg-zinc-950/45 backdrop-blur-xl border border-white/10 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
+        <div className="px-6 h-14 flex items-center justify-between">
           
           {/* Logo / Brand Name */}
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2 font-display text-sm font-bold tracking-[0.25em] text-white hover:text-accent transition-colors cursor-pointer"
+            className="flex items-center gap-2 font-display text-sm font-bold tracking-[0.25em] text-white hover:text-accent transition-all cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
           >
-            <span>MISHAM SAMANTA ARCHIVE</span>
+            <span>MISHAM</span>
             <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
           </button>
 
-          {/* Single Clutter-free Navigation Element */}
-          <nav className="flex items-center gap-6">
+          {/* Solid-white Pill Button on the Right */}
+          <nav className="flex items-center">
             <button
               onClick={() => scrollToId('projects')}
-              className="text-[10px] font-orbitron tracking-[0.15em] text-zinc-400 hover:text-accent transition-colors cursor-pointer border border-zinc-800/80 hover:border-accent/40 rounded-xs px-4 py-2 bg-zinc-950/40"
+              className="text-[11px] font-orbitron font-bold tracking-[0.12em] text-[#0a0a0c] bg-white hover:bg-accent hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 cursor-pointer rounded-full px-5 py-2.5 shadow-sm"
             >
               PROJECTS
             </button>
@@ -137,7 +137,7 @@ export default function App() {
             <span className="text-xl text-accent font-bold leading-none select-none">⊩</span>
             <div className="space-y-0.5">
               <p className="text-[10px] tracking-widest text-zinc-300 uppercase font-medium">
-                CRAFTING VISUAL ARCHIVES
+                CRAFTING VISUALS
               </p>
               <p className="text-[9px] tracking-widest text-zinc-500 uppercase leading-snug">
                 THROUGH BOLD GRAPHICS & EDITORIAL MOTION.
@@ -263,7 +263,7 @@ export default function App() {
             <div className="border-b border-zinc-900 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div className="space-y-1.5">
                 <span className="font-mono text-[9px] text-accent tracking-[0.25em] uppercase font-bold">
-                  ARCHIVE VOLUME I
+                  VOLUME I
                 </span>
                 <h2 className="font-display text-2xl md:text-4xl font-bold tracking-tight text-white uppercase">
                   Graphic Design & Layout
@@ -302,7 +302,7 @@ export default function App() {
             <div className="border-b border-zinc-900 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div className="space-y-1.5">
                 <span className="font-mono text-[9px] text-accent tracking-[0.25em] uppercase font-bold">
-                  ARCHIVE VOLUME II
+                  VOLUME II
                 </span>
                 <h2 className="font-display text-2xl md:text-4xl font-bold tracking-tight text-white uppercase">
                   Short-Form Vertical Videos
@@ -341,7 +341,7 @@ export default function App() {
             <div className="border-b border-zinc-900 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div className="space-y-1.5">
                 <span className="font-mono text-[9px] text-accent tracking-[0.25em] uppercase font-bold">
-                  ARCHIVE VOLUME III
+                  VOLUME III
                 </span>
                 <h2 className="font-display text-2xl md:text-4xl font-bold tracking-tight text-white uppercase">
                   Long-Form Cinematic Cuts
@@ -383,7 +383,7 @@ export default function App() {
           <div className="lg:col-span-5 space-y-12">
             <div className="space-y-6">
               <span className="font-mono text-[9px] text-accent tracking-[0.25em] uppercase font-bold">
-                BIOGRAPHY ARCHIVE
+                BIOGRAPHY
               </span>
               <h2 className="font-display text-3xl font-bold tracking-tight text-white uppercase">
                 The Story Behind the cuts & grids
@@ -500,16 +500,16 @@ export default function App() {
               <div className="border-t border-zinc-900/60 pt-6 space-y-4">
                 <p className="font-mono text-[9px] text-zinc-500 tracking-widest uppercase">DIRECT CONTACT</p>
                 <a
-                  href="mailto:aiden@vancearchive.com"
+                  href="mailto:misham.samanta@gmail.com"
                   className="group text-base font-sans text-white hover:text-accent transition-colors flex items-center gap-2 w-fit"
                 >
                   <Mail className="w-5 h-5 text-accent" />
-                  <span>aiden@vancearchive.com</span>
+                  <span>misham.samanta@gmail.com</span>
                 </a>
               </div>
 
               <div className="border-t border-zinc-900/60 pt-6 space-y-4">
-                <p className="font-mono text-[9px] text-zinc-500 tracking-widest uppercase">ONLINE ARCHIVES</p>
+                <p className="font-mono text-[9px] text-zinc-500 tracking-widest uppercase">ONLINE PLATFORMS</p>
                 <div className="flex flex-wrap gap-6 text-zinc-400">
                   <a
                     href="https://instagram.com/placeholder"
@@ -669,7 +669,7 @@ export default function App() {
       <footer className="bg-[#060608] border-t border-zinc-900/40 py-16 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-zinc-500 font-mono text-[10px] tracking-widest">
           <div>
-            © {new Date().getFullYear()} MISHAM SAMANTA ARCHIVE. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} MISHAM SAMANTA. ALL RIGHTS RESERVED.
           </div>
 
           <div className="flex gap-6">
