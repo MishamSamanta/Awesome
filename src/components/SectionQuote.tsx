@@ -27,7 +27,7 @@ export default function SectionQuote({ quote, id }: SectionQuoteProps) {
         <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[450px] h-[450px] bg-[#d2ff00]/[0.18] rounded-full filter blur-[100px] pointer-events-none -translate-x-1/3" />
         <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-[#d2ff00]/[0.06] rounded-full filter blur-[80px] pointer-events-none translate-y-1/3" />
 
-        <p className="relative z-10 font-display text-2xl md:text-5xl font-bold tracking-tight text-white leading-[1.15] max-w-4xl px-4">
+        <p className="relative z-10 font-shadows text-3xl md:text-6xl font-normal tracking-wide text-white leading-[1.25] max-w-4xl px-4">
           {quote}
         </p>
       </motion.div>
