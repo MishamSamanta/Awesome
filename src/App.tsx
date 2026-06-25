@@ -4,15 +4,16 @@ import {
   GRAPHIC_PROJECTS,
   SHORT_VIDEO_PROJECTS,
   LONG_VIDEO_PROJECTS,
-  TIMELINE,
-  SKILLS
+  TIMELINE
 } from './data';
 import { Project } from './types';
 import ProjectCard from './components/ProjectCard';
 import SectionQuote from './components/SectionQuote';
 import ProjectLightbox from './components/ProjectLightbox';
+import HorizontalScrollContainer from './components/HorizontalScrollContainer';
 import Beams from './components/Beams';
 import RotatingText from './components/RotatingText';
+import LogoLoop from './components/LogoLoop';
 import {
   Mail,
   Instagram,
@@ -274,16 +275,17 @@ export default function App() {
               </p>
             </div>
 
-            {/* Graphic Projects Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            {/* Graphic Projects Scroll Area */}
+            <HorizontalScrollContainer>
               {GRAPHIC_PROJECTS.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  onClick={() => openLightbox(project, GRAPHIC_PROJECTS)}
-                />
+                <div key={project.id} className="w-[280px] sm:w-[320px] md:w-[360px] snap-start shrink-0">
+                  <ProjectCard
+                    project={project}
+                    onClick={() => openLightbox(project, GRAPHIC_PROJECTS)}
+                  />
+                </div>
               ))}
-            </div>
+            </HorizontalScrollContainer>
 
             {/* Subsection transition quote */}
             <SectionQuote quote="A poster has one second to be noticed and a lifetime to be remembered." />
@@ -313,16 +315,17 @@ export default function App() {
               </p>
             </div>
 
-            {/* Short-Form Vertical Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {/* Short-Form Vertical Scroll Area */}
+            <HorizontalScrollContainer>
               {SHORT_VIDEO_PROJECTS.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  onClick={() => openLightbox(project, SHORT_VIDEO_PROJECTS)}
-                />
+                <div key={project.id} className="w-[180px] sm:w-[220px] md:w-[250px] snap-start shrink-0">
+                  <ProjectCard
+                    project={project}
+                    onClick={() => openLightbox(project, SHORT_VIDEO_PROJECTS)}
+                  />
+                </div>
               ))}
-            </div>
+            </HorizontalScrollContainer>
 
             {/* Subsection transition quote */}
             <SectionQuote quote="Attention is the rarest currency — short form spends it wisely." />
@@ -352,16 +355,17 @@ export default function App() {
               </p>
             </div>
 
-            {/* Long-Form Horizontal Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            {/* Long-Form Horizontal Scroll Area */}
+            <HorizontalScrollContainer>
               {LONG_VIDEO_PROJECTS.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  onClick={() => openLightbox(project, LONG_VIDEO_PROJECTS)}
-                />
+                <div key={project.id} className="w-[300px] sm:w-[380px] md:w-[440px] snap-start shrink-0">
+                  <ProjectCard
+                    project={project}
+                    onClick={() => openLightbox(project, LONG_VIDEO_PROJECTS)}
+                  />
+                </div>
               ))}
-            </div>
+            </HorizontalScrollContainer>
 
             {/* Subsection transition quote */}
             <SectionQuote quote="A long edit is a promise kept scene after scene." />
@@ -404,22 +408,25 @@ export default function App() {
                 <h4 className="font-mono text-xs tracking-widest text-accent uppercase">TOOLKIT & CORE CAPABILITIES</h4>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {SKILLS.map((cat, i) => (
-                  <div key={i} className="space-y-3">
-                    <h5 className="font-display text-xs font-semibold text-white tracking-widest uppercase">
-                      {cat.name}
-                    </h5>
-                    <ul className="space-y-1.5">
-                      {cat.skills.map((skill, si) => (
-                        <li key={si} className="text-zinc-400 text-xs flex items-center gap-2">
-                          <span className="w-1 h-1 bg-accent rounded-full" />
-                          {skill}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+              <div className="relative py-6 overflow-hidden rounded-2xl border border-zinc-900 bg-[#0f0f13]/30 backdrop-blur-2xl shadow-[0_15px_30px_rgba(0,0,0,0.4)]">
+                <LogoLoop
+                  logos={[
+                    { src: "https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg", title: "Adobe Premiere Pro", alt: "Premiere Pro" },
+                    { src: "https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg", title: "Adobe Photoshop", alt: "Photoshop" },
+                    { src: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Adobe_Photoshop_Lightroom_CC_logo.svg", title: "Adobe Lightroom", alt: "Lightroom" },
+                    { src: "https://upload.wikimedia.org/wikipedia/commons/4/4d/DaVinci_Resolve_Studio.png", title: "DaVinci Resolve", alt: "DaVinci Resolve" },
+                    { src: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg", title: "Figma", alt: "Figma" }
+                  ]}
+                  speed={40}
+                  direction="left"
+                  logoHeight={44}
+                  gap={44}
+                  hoverSpeed={0}
+                  scaleOnHover
+                  fadeOut
+                  fadeOutColor="#0f0f13"
+                  ariaLabel="Production Toolkit"
+                />
               </div>
             </div>
           </div>

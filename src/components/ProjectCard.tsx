@@ -38,7 +38,7 @@ export default function ProjectCard({ project, onClick, id }: ProjectCardProps) 
           src={project.imageUrl}
           alt={project.title}
           referrerPolicy="no-referrer"
-          className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+          className="w-full h-full object-cover brightness-95 group-hover:brightness-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
           style={{ aspectRatio: isShortForm ? '9/16' : isLongForm ? '16/9' : '3/4' }}
         />
 
