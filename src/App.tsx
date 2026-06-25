@@ -282,7 +282,7 @@ export default function App() {
                 <span className="font-mono text-[9px] text-accent tracking-[0.25em] uppercase font-bold">
                   VOLUME I
                 </span>
-                <h2 className="font-display text-2xl md:text-4xl font-bold tracking-tight text-white uppercase">
+                <h2 className="font-nabla text-3xl md:text-5xl font-normal tracking-wide uppercase">
                   Graphic Design & Layout
                 </h2>
               </div>
@@ -322,7 +322,7 @@ export default function App() {
                 <span className="font-mono text-[9px] text-accent tracking-[0.25em] uppercase font-bold">
                   VOLUME II
                 </span>
-                <h2 className="font-display text-2xl md:text-4xl font-bold tracking-tight text-white uppercase">
+                <h2 className="font-nabla text-3xl md:text-5xl font-normal tracking-wide uppercase">
                   Short-Form Vertical Videos
                 </h2>
               </div>
@@ -362,7 +362,7 @@ export default function App() {
                 <span className="font-mono text-[9px] text-accent tracking-[0.25em] uppercase font-bold">
                   VOLUME III
                 </span>
-                <h2 className="font-display text-2xl md:text-4xl font-bold tracking-tight text-white uppercase">
+                <h2 className="font-nabla text-3xl md:text-5xl font-normal tracking-wide uppercase">
                   Long-Form Cinematic Cuts
                 </h2>
               </div>
@@ -403,17 +403,17 @@ export default function App() {
           <div className="lg:col-span-5 space-y-12">
             <div className="space-y-6">
               <span className="font-mono text-[9px] text-accent tracking-[0.25em] uppercase font-bold">
-                BIOGRAPHY
+                The Story Behind the cuts & grids
               </span>
               <h2 className="font-display text-3xl font-bold tracking-tight text-white uppercase">
-                The Story Behind the cuts & grids
+                About Me
               </h2>
               <div className="space-y-4 text-zinc-400 text-sm leading-relaxed font-sans">
                 <p>
-                  My name is Misham Samanta. Over the last eight years, I have navigated the intersection where static graphic layout collides with rhythmic cinematic timelines. For me, design is not an ornamentation—it is a functional blueprint. A video is not a container for footage—it is an exploration of pace, sequence, and sonic texture.
+                  My name is Misham Samanta and I am currently a second year student at KIIT. I have a profound passion for graphic designing, video editing, and cinematic photography. I see design and video as interconnected layers of the same creative canvas, where static composition and fluid motion work together to capture attention.
                 </p>
                 <p>
-                  Whether designing a brutalist limited-edition print poster or editing a vertical video campaign that reaches millions, my execution remains unified: extreme structural integrity, high-contrast aesthetics, and meticulous attention to user engagement.
+                  In my graphic design work, I focus on precise layout structure, sophisticated color palettes, and strong typography. When capturing cinematic photography or editing videos, I explore the subtle interplay of light, perspective, and pacing. My goal is always to refine my craft and build immersive visual stories that feel intentional and impactful.
                 </p>
               </div>
             </div>
@@ -496,14 +496,31 @@ export default function App() {
         <SectionQuote quote="Every cut, every layer, is a small act of storytelling." />
 
         {/* F. CONTACT SECTION (INTEGRATED SINGLE PAGE SCROLL) */}
-        <motion.section 
-          id="contact" 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-120px" }}
-          transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
-          className="scroll-mt-24 px-6 py-20 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 border-t border-zinc-900/60"
-        >
+        <div id="contact" className="relative w-full overflow-hidden border-t border-zinc-900/60 scroll-mt-24">
+          {/* Subtle geometric glowing background grids */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/[0.03] rounded-full filter blur-[120px] pointer-events-none" />
+          
+          {/* Beams Background Effect */}
+          <div className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-40">
+            <Beams
+              beamWidth={3}
+              beamHeight={30}
+              beamNumber={20}
+              lightColor="#ffffff"
+              speed={2}
+              noiseIntensity={1.75}
+              scale={0.2}
+              rotation={30}
+            />
+          </div>
+
+          <motion.section 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-120px" }}
+            transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+            className="relative z-10 px-6 py-20 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16"
+          >
           
           {/* Left Side: Contact details */}
           <div className="lg:col-span-5 space-y-10">
@@ -523,11 +540,11 @@ export default function App() {
               <div className="border-t border-zinc-900/60 pt-6 space-y-4">
                 <p className="font-mono text-[9px] text-zinc-500 tracking-widest uppercase">DIRECT CONTACT</p>
                 <a
-                  href="mailto:misham.samanta@gmail.com"
+                  href="mailto:creative.misham@gmail.com"
                   className="group text-base font-sans text-white hover:text-accent transition-colors flex items-center gap-2 w-fit"
                 >
                   <Mail className="w-5 h-5 text-accent" />
-                  <span>misham.samanta@gmail.com</span>
+                  <span>creative.misham@gmail.com</span>
                 </a>
               </div>
 
@@ -710,6 +727,7 @@ export default function App() {
             </AnimatePresence>
           </div>
         </motion.section>
+      </div>
 
         {/* Closing Transition quote */}
         <SectionQuote quote="Good work finds the right eyes — let's make something worth noticing." />
@@ -735,8 +753,8 @@ export default function App() {
             </a>
           </div>
 
-          <a href="mailto:misham.samanta@gmail.com" className="hover:text-accent text-[#f4f4f6]/70 transition-colors uppercase">
-            misham.samanta@gmail.com
+          <a href="mailto:creative.misham@gmail.com" className="hover:text-accent text-[#f4f4f6]/70 transition-colors uppercase">
+            creative.misham@gmail.com
           </a>
         </div>
       </footer>
