@@ -294,7 +294,7 @@ export default function App() {
             {/* Graphic Projects Scroll Area */}
             <HorizontalScrollContainer>
               {GRAPHIC_PROJECTS.map((project) => (
-                <div key={project.id} className="w-[280px] sm:w-[320px] md:w-[360px] snap-start shrink-0">
+                <div key={project.id} className="w-[280px] sm:w-[320px] md:w-[360px] snap-center shrink-0">
                   <ProjectCard
                     project={project}
                     onClick={() => openLightbox(project, GRAPHIC_PROJECTS)}
@@ -334,7 +334,7 @@ export default function App() {
             {/* Short-Form Vertical Scroll Area */}
             <HorizontalScrollContainer>
               {SHORT_VIDEO_PROJECTS.map((project) => (
-                <div key={project.id} className="w-[180px] sm:w-[220px] md:w-[250px] snap-start shrink-0">
+                <div key={project.id} className="w-[180px] sm:w-[220px] md:w-[250px] snap-center shrink-0">
                   <ProjectCard
                     project={project}
                     onClick={() => openLightbox(project, SHORT_VIDEO_PROJECTS)}
@@ -374,7 +374,7 @@ export default function App() {
             {/* Long-Form Horizontal Scroll Area */}
             <HorizontalScrollContainer>
               {LONG_VIDEO_PROJECTS.map((project) => (
-                <div key={project.id} className="w-[300px] sm:w-[380px] md:w-[440px] snap-start shrink-0">
+                <div key={project.id} className="w-[300px] sm:w-[380px] md:w-[440px] snap-center shrink-0">
                   <ProjectCard
                     project={project}
                     onClick={() => openLightbox(project, LONG_VIDEO_PROJECTS)}
@@ -581,7 +581,7 @@ export default function App() {
                   </StarBorder>
                   <StarBorder
                     as="a"
-                    href="https://linkedin.com/placeholder"
+                    href="https://www.linkedin.com/in/misham-samanta-33b838224/"
                     target="_blank"
                     rel="noreferrer"
                     color="#10b981"
@@ -748,7 +748,7 @@ export default function App() {
             <a href="https://youtube.com/placeholder" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">
               YOUTUBE
             </a>
-            <a href="https://linkedin.com/placeholder" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">
+            <a href="https://www.linkedin.com/in/misham-samanta-33b838224/" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">
               LINKEDIN
             </a>
           </div>
