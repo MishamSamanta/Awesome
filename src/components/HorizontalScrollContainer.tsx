@@ -9,37 +9,6 @@ export default function HorizontalScrollContainer({ children }: HorizontalScroll
   const scrollRef = useRef<HTMLDivElement>(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
-  const [centerIndex, setCenterIndex] = useState<number>(0);
-
-  const determineCenterElement = () => {
-    const container = scrollRef.current;
-    if (!container) return;
-
-    const containerRect = container.getBoundingClientRect();
-    const containerCenter = containerRect.left + containerRect.width / 2;
-
-    const childrenElements = Array.from(container.children).filter(
-      (el) => el.tagName !== 'STYLE' && el.tagName !== 'style'
-    ) as HTMLElement[];
-
-    if (childrenElements.length === 0) return;
-
-    let closestIndex = 0;
-    let minDistance = Infinity;
-
-    childrenElements.forEach((child, index) => {
-      const childRect = child.getBoundingClientRect();
-      const childCenter = childRect.left + childRect.width / 2;
-      const distance = Math.abs(childCenter - containerCenter);
-
-      if (distance < minDistance) {
-        minDistance = distance;
-        closestIndex = index;
-      }
-    });
-
-    setCenterIndex(closestIndex);
-  };
 
   const checkScroll = () => {
     if (scrollRef.current) {
@@ -47,7 +16,6 @@ export default function HorizontalScrollContainer({ children }: HorizontalScroll
       setShowLeftArrow(scrollLeft > 10);
       // Allow some tolerance for subpixel rendering
       setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
-      determineCenterElement();
     }
   };
 
@@ -88,21 +56,6 @@ export default function HorizontalScrollContainer({ children }: HorizontalScroll
     }
   };
 
-  const clonedChildren = React.Children.map(children, (child, index) => {
-    if (React.isValidElement(child)) {
-      const isActive = centerIndex === index;
-      const element = child as React.ReactElement<any>;
-      return React.cloneElement(element, {
-        className: `${element.props.className || ''} transition-all duration-500 ease-out origin-center ${
-          isActive 
-            ? 'scale-[1.04] md:scale-[1.08] z-10 brightness-100 opacity-100 shadow-[0_12px_40px_rgba(210,255,0,0.15)]' 
-            : 'scale-[0.92] md:scale-95 opacity-40 brightness-75'
-        }`
-      });
-    }
-    return child;
-  });
-
   return (
     <div className="relative group/carousel w-full">
       {/* Left scroll button */}
@@ -141,7 +94,7 @@ export default function HorizontalScrollContainer({ children }: HorizontalScroll
             display: none !important;
           }
         `}} />
-        {clonedChildren}
+        {children}
       </div>
     </div>
   );

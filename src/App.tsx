@@ -14,6 +14,7 @@ import StarBorder from './components/StarBorder';
 import HorizontalScrollContainer from './components/HorizontalScrollContainer';
 import Beams from './components/Beams';
 import RotatingText from './components/RotatingText';
+import SplitText from './components/SplitText';
 import LogoLoop from './components/LogoLoop';
 import {
   Mail,
@@ -161,14 +162,30 @@ export default function App() {
               className="space-y-1"
             >
               <span className="block font-shadows font-bold text-5xl md:text-7xl lg:text-8xl text-white tracking-wide">
-                Make
+                <SplitText
+                  text="Make"
+                  delay={120}
+                  duration={1.0}
+                  ease="power3.out"
+                  splitType="chars"
+                  from={{ opacity: 0, y: 30 }}
+                  to={{ opacity: 1, y: 0 }}
+                />
               </span>
               
               <h1 
                 className="font-blackops font-normal leading-[0.9] tracking-normal text-white uppercase select-none"
                 style={{ fontSize: 'clamp(3.5rem, 12vw, 10rem)' }}
               >
-                AWESOME.
+                <SplitText
+                  text="AWESOME."
+                  delay={60}
+                  duration={1.2}
+                  ease="power3.out"
+                  splitType="chars"
+                  from={{ opacity: 0, y: 50 }}
+                  to={{ opacity: 1, y: 0 }}
+                />
               </h1>
             </motion.div>
 
@@ -294,7 +311,7 @@ export default function App() {
             {/* Graphic Projects Scroll Area */}
             <HorizontalScrollContainer>
               {GRAPHIC_PROJECTS.map((project) => (
-                <div key={project.id} className="w-[280px] sm:w-[320px] md:w-[360px] snap-center shrink-0">
+                <div key={project.id} className="w-[280px] sm:w-[320px] md:w-[360px] snap-start shrink-0">
                   <ProjectCard
                     project={project}
                     onClick={() => openLightbox(project, GRAPHIC_PROJECTS)}
@@ -334,7 +351,7 @@ export default function App() {
             {/* Short-Form Vertical Scroll Area */}
             <HorizontalScrollContainer>
               {SHORT_VIDEO_PROJECTS.map((project) => (
-                <div key={project.id} className="w-[180px] sm:w-[220px] md:w-[250px] snap-center shrink-0">
+                <div key={project.id} className="w-[180px] sm:w-[220px] md:w-[250px] snap-start shrink-0">
                   <ProjectCard
                     project={project}
                     onClick={() => openLightbox(project, SHORT_VIDEO_PROJECTS)}
@@ -374,7 +391,7 @@ export default function App() {
             {/* Long-Form Horizontal Scroll Area */}
             <HorizontalScrollContainer>
               {LONG_VIDEO_PROJECTS.map((project) => (
-                <div key={project.id} className="w-[300px] sm:w-[380px] md:w-[440px] snap-center shrink-0">
+                <div key={project.id} className="w-[300px] sm:w-[380px] md:w-[440px] snap-start shrink-0">
                   <ProjectCard
                     project={project}
                     onClick={() => openLightbox(project, LONG_VIDEO_PROJECTS)}
@@ -553,7 +570,7 @@ export default function App() {
                 <div className="flex flex-wrap gap-4 text-zinc-400">
                   <StarBorder
                     as="a"
-                    href="https://instagram.com/placeholder"
+                    href="https://www.instagram.com/miz.concpet/"
                     target="_blank"
                     rel="noreferrer"
                     color="#10b981"
@@ -742,7 +759,7 @@ export default function App() {
           </div>
 
           <div className="flex gap-6">
-            <a href="https://instagram.com/placeholder" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">
+            <a href="https://www.instagram.com/miz.concpet/" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">
               INSTAGRAM
             </a>
             <a href="https://youtube.com/placeholder" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">

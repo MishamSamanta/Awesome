@@ -90,6 +90,10 @@ export default function ProjectCard({ project, onClick, id }: ProjectCardProps) 
           )}
         </div>
 
+        <p className="text-zinc-400 text-xs line-clamp-2 leading-relaxed">
+          {project.description}
+        </p>
+
         {/* Tags */}
         <div className="flex flex-wrap gap-1.5 pt-1">
           {project.tags?.map((tag, i) => (
